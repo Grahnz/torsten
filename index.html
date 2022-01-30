@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta property="og:title" content="Hjälp oss att hitta Torsten" />
+    <meta property="og:title" content="Har du sett Torsten?" />
+    <meta
+      property="og:description"
+      content="Torsten är försvunnen, vi behöver din hjälp att hitta honom"
+    />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://grahnz.github.io/torsten/" />
     <meta
       property="og:image"
-      content="https://ia.media-imdb.com/images/rock.jpg"
+      content="https://grahnz.github.io/torsten/images/torsten-02.jpg"
     />
     <title>Hjälp oss att hitta Torsten</title>
 
@@ -44,7 +48,7 @@
         max-height: calc(100vh - 2rem);
       }
 
-      @media screen, print and (min-width: 1024px) {
+      @media print, screen and (min-width: 1024px) {
         .images {
           grid-template-columns: repeat(2, 1fr);
         }
@@ -87,6 +91,23 @@
     </script>
   </head>
   <body>
+    <script>
+      var shareUrl = "https://grahnz.github.io/torsten/";
+      function tweet() {
+        var tweetUrl =
+          "https://twitter.com/intent/tweet?text=" +
+          "Har du sett Torsten?" +
+          "&url=" +
+          encodeURIComponent(shareUrl);
+        window.open(tweetUrl, "_blank");
+      }
+      function facebookShare() {
+        var facebookUrl =
+          "https://www.facebook.com/sharer/sharer.php?u=" +
+          encodeURIComponent(shareUrl);
+        window.open(facebookUrl, "_blank");
+      }
+    </script>
     <main>
       <h1>Vi behöver din hjälp att hitta Torsten ❤️</h1>
       <div class="images">
@@ -95,10 +116,14 @@
       </div>
       <p>
         Torsten håller på att lära sig att gå ut, och är ganska skygg. När han
-        är ute håller han sig då i ett ganska litet område bakom brodervägen,
-        efter några timmar brukar vi gå och ropa efter honom och då kommer han
-        normalt sett direkt och vi leder honom in. Nu har vi inte sett av honom
-        på snart 4 dagar.
+        är ute håller han sig då i ett ganska litet område bakom
+        <a
+          href="https://www.google.com/maps/place/Broderiv%C3%A4gen,+168+38+Stockholm/@59.3394887,17.9269161,17z/data=!3m1!4b1!4m5!3m4!1s0x465f75fbdca17bc3:0x7919a9860ec74d7a!8m2!3d59.3394887!4d17.9291048"
+          target="_blank"
+          >broderivägen</a
+        >, efter några timmar brukar vi gå och ropa efter honom och då kommer
+        han normalt sett direkt och vi leder honom in. Nu har vi inte sett av
+        honom på snart 4 dagar.
       </p>
 
       <div id="map"></div>
@@ -107,7 +132,7 @@
     <h2>Kontakt</h2>
     <p>
       Om du har sett en katt du tror kan vara torsten, eller om du vet någon som
-      kanske har. Hör gärna av dig
+      kanske har så hör gärna av dig.
     </p>
     <address>
       Telefon: <a href="tel:0707492935">070 749 29 35</a>
@@ -141,8 +166,8 @@
     </div>
 
     <div class="share-social-media">
-      <button id="fb">Facebook</button>
-      <button id="twitter">Twitter</button>
+      <button id="fb" onclick="facebookShare()">Facebook</button>
+      <button id="twitter" onclick="tweet()">Twitter</button>
     </div>
 
     <script>
