@@ -4,12 +4,151 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Torsten är saknad!</title>
+    <meta property="og:title" content="Hjälp oss att hitta Torsten" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://grahnz.github.io/torsten/" />
+    <meta
+      property="og:image"
+      content="https://ia.media-imdb.com/images/rock.jpg"
+    />
+    <title>Hjälp oss att hitta Torsten</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2.1.1/out/water.min.css"
+      integrity="sha256-QST90Wzz4PEr5KlclQaOCsjc00FTyf86Wrj41oqZB4w="
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/clipboard@2.0.9/dist/clipboard.min.js"
+      integrity="sha256-8/uH1D6bnD2G4Xinh2NJ5SoCcd4nVwW593iOXCp9LS0="
+      crossorigin="anonymous"
+    ></script>
+
+    <style>
+      .images {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        justify-items: center;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+      }
+
+      img {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        max-height: calc(100vh - 2rem);
+      }
+
+      @media screen, print and (min-width: 1024px) {
+        .images {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .share-url {
+        display: flex;
+      }
+      .share-social-media {
+        display: flex;
+      }
+      #fb,
+      #twitter {
+        flex: 1;
+      }
+      #fb {
+        background-color: #3b5997;
+        border-color: #3b5997;
+        color: white;
+      }
+      #twitter {
+        background-color: #41b7d8;
+        border-color: #41b7d8;
+        color: white;
+      }
+    </style>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H5XK8PJNX2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H5XK8PJNX2");
+    </script>
   </head>
   <body>
-    <h1>Torsten är saknad!</h1>
-    <p>Hjälp oss att hitta torsten</p>
-    <img src="./images/torsten-01.jpg" />
-    <img src="./images/torsten-02.jpg" />
+    <main>
+      <h1>Vi behöver din hjälp att hitta Torsten ❤️</h1>
+      <div class="images">
+        <img src="./images/torsten-01.jpg" />
+        <img src="./images/torsten-02.jpg" />
+      </div>
+      <p>
+        Torsten håller på att lära sig att gå ut, och är ganska skygg. När han
+        är ute håller han sig då i ett ganska litet område bakom brodervägen,
+        efter några timmar brukar vi gå och ropa efter honom och då kommer han
+        normalt sett direkt och vi leder honom in. Nu har vi inte sett av honom
+        på snart 4 dagar.
+      </p>
+
+      <div id="map"></div>
+    </main>
+
+    <h2>Kontakt</h2>
+    <p>
+      Om du har sett en katt du tror kan vara torsten, eller om du vet någon som
+      kanske har. Hör gärna av dig
+    </p>
+    <address>
+      Telefon: <a href="tel:0707492935">070 749 29 35</a>
+      <br />
+      Mail: <a href="mailto:johang_92@hotmail.com">johang_92_@hotmail.com</a>
+    </address>
+
+    <h2>Dela gärna för att öka chansen att vi får se Torsten igen ❤️</h2>
+
+    <div class="share-url">
+      <input
+        id="share-url"
+        style="width: 100%"
+        readonly
+        value="https://grahnz.github.io/torsten/"
+      />
+      <button class="copy-button" data-clipboard-target="#share-url">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24px"
+          viewBox="0 0 24 24"
+          width="24px"
+          fill="#FFFFFF"
+        >
+          <path d="M0 0h24v24H0z" fill="none" />
+          <path
+            d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"
+          />
+        </svg>
+      </button>
+    </div>
+
+    <div class="share-social-media">
+      <button id="fb">Facebook</button>
+      <button id="twitter">Twitter</button>
+    </div>
+
+    <script>
+      (function () {
+        new ClipboardJS(".copy-button");
+      })();
+    </script>
   </body>
 </html>
